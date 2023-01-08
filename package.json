@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/raja00912/flipkart-clone/issues"
   },
-  "homepage": "https://github.com/raja00912/flipkart-clone#readme"
+  "homepage": "https://github.com/raja00912/flipkart-clone#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
