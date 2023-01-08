@@ -2,6 +2,7 @@ const express = require('express')
 const path = require("path");
 const cors = require("cors");
 const morgan = require("morgan");
+const { connect } = require('./db/connect');
 
 const app = express();
 app.use(express.json());
@@ -13,4 +14,9 @@ app.get("/", (req, res) => {
     res.send({ message: "Hello" });
 })
 
+connect().then(() => {
+    app.listen(5000, () => {
+        console.log("listening in 5000");
+    })
+})
 
