@@ -25,6 +25,16 @@ app.get("/products", async (req, res) => {
     }
 })
 
+app.post("/products", async (req, res) => {
+    let data = req.body.products;
+    try {
+        let reusult = await ProductModel.create(data);
+        res.status(201).send("Product Created Successfully");
+    } catch (err) {
+        res.status(500).send(err);
+    }
+})
+
 connect().then(() => {
     console.log("connected to db")
     app.listen(5000, () => {
