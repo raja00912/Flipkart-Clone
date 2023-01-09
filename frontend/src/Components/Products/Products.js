@@ -4,10 +4,29 @@ import axios from "axios";
 function Products() {
 
     const getData = async () => {
+        // const products = {
+        //     title: "Roadter Shirt",
+        //     description: "Men's Shirt",
+        //     image: "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2Faf%2F5b%2Faf5bc2554eac0ea2a3649dc9b730751614636733.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",
+        //     price: 799,
+        //     category: "Shirt"
+        // }
+        try {
+            let res = await axios.get(`https://flipkart-clone-rho.vercel.app/products`)
+            console.log(res.data);
+        }
+        catch (err) {
+            console.log(err);
+        }
+
+    }
+
+    const postdata = async () => {
         const products = {
             title: "Roadter Shirt",
             description: "Men's Shirt",
-            image: "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2Faf%2F5b%2Faf5bc2554eac0ea2a3649dc9b730751614636733.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",
+            image1: "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2Faf%2F5b%2Faf5bc2554eac0ea2a3649dc9b730751614636733.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",
+            image2: "https://4.imimg.com/data4/LL/TW/MY-33084776/men-s-shirt-500x500.jpg",
             price: 799,
             category: "Shirt"
         }
@@ -20,11 +39,11 @@ function Products() {
         catch (err) {
             console.log(err);
         }
-
+        getData();
     }
 
     useEffect(() => {
-        getData();
+        postdata();
     }, [])
 
     return (

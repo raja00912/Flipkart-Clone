@@ -26,7 +26,7 @@ app.get("/products", async (req, res) => {
 })
 
 app.post("/products", async (req, res) => {
-    let data = req.body.products;
+    let data = req.body;
     try {
         let reusult = await ProductModel.create(data);
         res.status(201).send("Product Created Successfully");
